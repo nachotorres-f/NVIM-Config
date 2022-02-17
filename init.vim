@@ -37,7 +37,7 @@ set laststatus=2
 syntax enable " Enable the syntax for the languages
 
 " Plugins
-call plug#begin()
+call plug#begin('~/vimfiles/autoload')
 
 Plug 'morhetz/gruvbox' " gruvbox
 Plug 'preservim/nerdtree' " NerdTree
@@ -75,6 +75,9 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 " Move right panel
 nmap <C-l> <C-w>l
+
+" Exit mode insert
+imap jk <ESC>
 
 " Move to the next tab
 nmap <Tab> :tabn<CR>
