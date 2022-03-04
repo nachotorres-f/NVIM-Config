@@ -78,6 +78,9 @@ Plug 'maxmellon/vim-jsx-pretty'
 " Higlight tsx
 Plug 'HerringtonDarkholme/yats.vim'
 
+" Higlight json
+Plug 'neoclide/jsonc.vim'
+
 call plug#end()
 
 colorscheme gruvbox " Set default colorscheme
