@@ -39,16 +39,44 @@ syntax enable " Enable the syntax for the languages
 " Plugins
 call plug#begin('~/vimfiles/autoload')
 
-Plug 'morhetz/gruvbox' " gruvbox
-Plug 'preservim/nerdtree' " NerdTree
-Plug 'neoclide/coc.nvim', { 'branch': 'release' } " Coc
-Plug 'junegunn/fzf', { 'do': {-> fzf#install() } } " Fzf
-Plug 'tpope/vim-fugitive' " Fugitive
-Plug 'vim-airline/vim-airline' " Vim Airline
-Plug 'vim-airline/vim-airline-themes' " Vim Airline Themes
-Plug 'scrooloose/nerdcommenter' " NerdCommenter
-Plug 'voldikss/vim-floaterm' " FloaTerm
-Plug 'mhinz/vim-startify' " Startify
+" Theme editor
+Plug 'morhetz/gruvbox'
+
+" Tree explorer
+Plug 'preservim/nerdtree'
+
+" Auto complete
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+
+" Search files and much more
+Plug 'junegunn/fzf', { 'do': {-> fzf#install() } }
+
+" Git commands
+Plug 'tpope/vim-fugitive'
+
+" Statusline
+Plug 'vim-airline/vim-airline'
+
+" Themes for statusline
+Plug 'vim-airline/vim-airline-themes'
+
+" Commands to comment lines
+Plug 'scrooloose/nerdcommenter'
+
+" Float terminal
+Plug 'voldikss/vim-floaterm'
+
+" Homepage
+Plug 'mhinz/vim-startify'
+
+" Highlight js
+Plug 'yuezk/vim-js'
+
+" Highlight jsx
+Plug 'maxmellon/vim-jsx-pretty'
+
+" Higlight tsx
+Plug 'HerringtonDarkholme/yats.vim'
 
 call plug#end()
 
