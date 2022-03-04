@@ -57,7 +57,9 @@ colorscheme gruvbox " Set default colorscheme
 let g:airline_theme='wombat'
 
 " keybin's
-let mapleader=" " " Set leader key
+
+" Set leader key
+let mapleader=" " 
 " Save a file
 nmap <leader>w :w<CR>
 " Exit from a file
@@ -79,6 +81,8 @@ nmap <C-l> <C-w>l
 " Exit mode insert
 imap jk <ESC>
 
+"Create a new tab
+nmap <Leader>tn :tabnew<CR>
 " Move to the next tab
 nmap <Tab> :tabn<CR>
 " Move to the previous tab
@@ -97,3 +101,35 @@ nmap <leader>n :NERDTreeToggle<CR>
 
 " Show home page Startify
 nmap <leader><leader> :Startify<CR>
+
+" Git
+" Show branchs
+nmap <leader>gb :Git branch<CR>
+" Restore not staged files
+nmap <leader>gr :Git restore 
+" Restore staged files
+nmap <leader>grs :Git restore --staged 
+" Change branch
+nmap <leader>gsw :Git switch 
+" Create and change branch
+nmap <leader>gsc :Git switch -c 
+" View status files
+nmap <leader>gst :Git status<CR>
+" View differencies files
+nmap <leader>gd :Git diff<CR>
+" Add files to stage
+nmap <leader>ga :Git add 
+" Add all files to stage
+nmap <leader>gaa :Git add .<CR>
+" Make commit
+nmap <leader>gc :Git commit<CR>
+" View logs
+nmap <leader>gl :Git log<CR>
+" Get remote changes
+nmap <leader>gf :Git fetch<CR>
+" Merge branchs
+nmap <leader>gm :Git merge 
+" Get remote changes and merge
+nmap <leader>gpl :Git pull<CR>
+" Upload local changes to repository
+nmap <leader>gph :Git push<CR>
