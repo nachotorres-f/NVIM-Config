@@ -45,7 +45,7 @@ Plug 'morhetz/gruvbox'
 " Tree explorer
 Plug 'preservim/nerdtree'
 
-" Auto complete
+" Like VScode 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Search files and much more
@@ -85,7 +85,7 @@ call plug#end()
 
 colorscheme gruvbox " Set default colorscheme
 
-let g:airline_theme='wombat'
+let g:airline_theme='wombat' " Set theme status line
 
 " keybin's
 
