@@ -38,7 +38,7 @@ Execute in neovim:
 :PlugInstall
 ```
 
-1.Install Coc Extensions
+2.Install Coc Extensions
 
 ```vim:
 :CocInstall <extensions> 
