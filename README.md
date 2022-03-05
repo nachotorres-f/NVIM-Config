@@ -32,13 +32,13 @@ Where clone the repository:
 
 Execute in neovim:
 
-1.Install Plugins
+1. Install Plugins
 
 ```vim:
 :PlugInstall
 ```
 
-2.Install Coc Extensions
+1. Install Coc Extensions
 
 ```vim:
 :CocInstall <extensions> 
