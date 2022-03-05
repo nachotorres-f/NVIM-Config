@@ -32,14 +32,29 @@ Where clone the repository:
 
 Execute in neovim:
 
-1. Install Plugins
+1 - Install Plugins
 
 ```vim:
 :PlugInstall
 ```
 
-1. Install Coc Extensions
+2 - Install Coc Extensions
 
 ```vim:
 :CocInstall <extensions> 
 ```
+
+### **Extensions:**
+
+* coc-git
+* coc-prettier
+* coc-eslint
+* coc-html
+* coc-css
+* coc-tsserver
+* coc-json
+* coc-markdownlint
+* coc-phpls
+* coc-sh
+* coc-pyright
+* coc-vetur
