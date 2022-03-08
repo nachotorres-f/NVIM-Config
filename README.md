@@ -58,5 +58,6 @@ Execute in neovim:
 * coc-sh
 * coc-pyright
 * coc-vetur
+* coc-pairs
 
 **For more extensions** [click here](https://github.com/neoclide/coc.nvim/wiki/Language-servers)

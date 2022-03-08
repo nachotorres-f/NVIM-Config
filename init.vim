@@ -1,3 +1,5 @@
+" ##### VIM CONFIG #####
+
 set title " Show the name of the archive in the window of the terminal
 set number " Show the numbers of the lines
 set numberwidth=1 " Width of the numbers lines
@@ -36,7 +38,8 @@ set laststatus=2
 
 syntax enable " Enable the syntax for the languages
 
-" Plugins
+" ##### PLUGINS #####
+
 call plug#begin('~/vimfiles/autoload')
 
 " Theme editor
@@ -69,25 +72,32 @@ Plug 'voldikss/vim-floaterm'
 " Homepage
 Plug 'mhinz/vim-startify'
 
-" Highlight js
-Plug 'yuezk/vim-js'
-
-" Highlight jsx
-Plug 'maxmellon/vim-jsx-pretty'
-
-" Higlight tsx
+" Syntax support to tsx
 Plug 'HerringtonDarkholme/yats.vim'
 
-" Higlight json
+" Syntax support to js jsx
+Plug 'neoclide/vim-jsx-improve'
+
+" Syntax highlight to json 
 Plug 'neoclide/jsonc.vim'
 
+" View indent lines
+Plug 'yggdroot/indentline'
+
 call plug#end()
+
+" ##### COLORSCHEME #####
 
 colorscheme gruvbox " Set default colorscheme
 
 let g:airline_theme='wombat' " Set theme status line
 
-" keybin's
+" ##### INDENT LINES #####
+
+let g:indentLine_char_list = ['|', '¦', '┆', '┊'] " Characters to show the indent lines
+let g:indentLine_enabled = 1 " Set enabled indent line
+
+" ##### KEYBIN'S #####
 
 " Set leader key
 let mapleader=" " 
