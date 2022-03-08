@@ -99,6 +99,7 @@ let g:indentLine_enabled = 1 " Set enabled indent line
 
 " ##### KEYBIN'S #####
 
+" ##### FILES #####
 " Set leader key
 let mapleader=" " 
 " Save a file
@@ -107,9 +108,11 @@ nmap <leader>w :w<CR>
 nmap <leader>q :q<CR>
 " Save and exit from a file
 nmap <leader>wq :wq<CR>
+
 " Reload VIM
 nmap <leader>so :so%<CR> 
 
+" ##### MOVE PANELS #####
 " Move left panel
 nmap <C-h> <C-w>h
 " Move bottom panel
@@ -122,6 +125,15 @@ nmap <C-l> <C-w>l
 " Exit mode insert
 imap jk <ESC>
 
+" ##### CLIPBOARD O.S. #####
+" Copy
+nmap <leader>y "+y<CR>
+" Paste
+nmap <leader>p "+p<CR>
+" Cut
+nmap <leader>d "+d<CR>
+
+" ##### TABS #####
 "Create a new tab
 nmap <Leader>tn :tabnew<CR>
 " Move to the next tab
@@ -129,21 +141,24 @@ nmap <Tab> :tabn<CR>
 " Move to the previous tab
 nmap <S-Tab> :tabp<CR>
 
+" ##### FLOAT TERMINAL ######
 " Create a new float terminal
 nmap <leader>t :FloatermNew<CR>
 " Toggle the float terminal
 nmap <leader>tt :FloatermToggle<CR>
 
+" ##### FZF #####
 " Open FZF (Search files)
 nmap <C-p> :FZF<CR>
 
 " Toggle Files Tree
 nmap <leader>n :NERDTreeToggle<CR>
 
+" ##### STARTIFY #####
 " Show home page Startify
 nmap <leader><leader> :Startify<CR>
 
-" Git
+" ##### GIT ##### 
 " Show branchs
 nmap <leader>gb :Git branch<CR>
 " Restore not staged files
