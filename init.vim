@@ -45,6 +45,9 @@ call plug#begin('~/vimfiles/autoload')
 " Theme editor
 Plug 'morhetz/gruvbox'
 
+" Theme Editor
+Plug 'Rigellute/shades-of-purple.vim'
+
 " Tree explorer
 Plug 'preservim/nerdtree'
 
@@ -88,9 +91,12 @@ call plug#end()
 
 " ##### COLOR SCHEME #####
 
-colorscheme gruvbox " Set default color scheme
+colorscheme shades_of_purple " Set default color scheme
+let g:shades_of_purple_airline = 1
 
-let g:airline_theme='wombat' " Set theme status line
+" ##### STATUS LINE ######
+
+let g:airline_theme='shades_of_purple' " Set theme status line
 
 " ##### INDENT LINES #####
 
@@ -109,7 +115,7 @@ nmap <leader>q :q<CR>
 " Save and exit from a file
 nmap <leader>wq :wq<CR>
 
-" Reload VIM
+" Reload VI3
 nmap <leader>so :so%<CR> 
 
 " ##### MOVE PANELS #####
