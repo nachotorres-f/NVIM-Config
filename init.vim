@@ -1,4 +1,4 @@
-" ##### VIM CONFIG #####
+" ##### VIM CONFIGURATION #####
 
 set title " Show the name of the archive in the window of the terminal
 set number " Show the numbers of the lines
@@ -9,7 +9,7 @@ set mouse=a " Allow use the mouse (select text, move cursor)
 set nowrap " No split the line if it is too long
 
 set cursorline " Mark the current line
-"set cursorcolumn " Mark the current columnt
+"set cursor column " Mark the current column
 set colorcolumn=80 " Show the limit column to 80 characters
 
 " Indentation to 2 spaces
@@ -21,8 +21,8 @@ set expandtab " Insert spaces and not <Tab>s
 
 set hidden " Allow change of buffer without save it
 
-set ignorecase " Ignore mayus when you do search
-set smartcase " Don't ignore mayus if the seatch contains mayus
+set ignorecase " Ignore upper when you do search
+set smartcase " Don't ignore upper if the search contains upper
 
 set spelllang=en,es " Check words using dictionaries in English and Spanish
 
@@ -57,10 +57,10 @@ Plug 'junegunn/fzf', { 'do': {-> fzf#install() } }
 " Git commands
 Plug 'tpope/vim-fugitive'
 
-" Statusline
+" Status line
 Plug 'vim-airline/vim-airline'
 
-" Themes for statusline
+" Themes for status line
 Plug 'vim-airline/vim-airline-themes'
 
 " Commands to comment lines
@@ -86,9 +86,9 @@ Plug 'yggdroot/indentline'
 
 call plug#end()
 
-" ##### COLORSCHEME #####
+" ##### COLOR SCHEME #####
 
-colorscheme gruvbox " Set default colorscheme
+colorscheme gruvbox " Set default color scheme
 
 let g:airline_theme='wombat' " Set theme status line
 
@@ -127,11 +127,11 @@ imap jk <ESC>
 
 " ##### CLIPBOARD O.S. #####
 " Copy
-nmap <leader>y "+y<CR>
+nmap <leader>y "+y
 " Paste
-nmap <leader>p "+p<CR>
+nmap <leader>p "+p
 " Cut
-nmap <leader>d "+d<CR>
+nmap <leader>d "+d
 
 " ##### TABS #####
 "Create a new tab
@@ -159,7 +159,7 @@ nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader><leader> :Startify<CR>
 
 " ##### GIT ##### 
-" Show branchs
+" Show branches
 nmap <leader>gb :Git branch<CR>
 " Restore not staged files
 nmap <leader>gr :Git restore 
