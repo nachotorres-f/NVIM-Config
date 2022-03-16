@@ -36,6 +36,8 @@ set showmatch
 set sw=2
 set laststatus=2
 
+set encoding=UTF-8 " Set encoding
+
 syntax enable " Enable the syntax for the languages
 
 " ##### PLUGINS #####
@@ -87,20 +89,32 @@ Plug 'neoclide/jsonc.vim'
 " View indent lines
 Plug 'yggdroot/indentline'
 
+" Icons
+Plug 'ryanoasis/vim-devicons'
+
+" CSV
+Plug 'chrisbra/csv.vim'
+
 call plug#end()
 
 " ##### COLOR SCHEME #####
 
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 colorscheme shades_of_purple " Set default color scheme
-let g:shades_of_purple_airline = 1
 
 " ##### STATUS LINE ######
 
+let g:shades_of_purple_airline = 1
 let g:airline_theme='shades_of_purple' " Set theme status line
 
 " ##### INDENT LINES #####
 
 let g:indentLine_char_list = ['|', '¦', '┆', '┊'] " Characters to show the indent lines
+let g:indentLine_color_gui = '#754dc0'
+          
 let g:indentLine_enabled = 1 " Set enabled indent line
 
 " ##### KEYBIN'S #####
@@ -116,7 +130,7 @@ nmap <leader>q :q<CR>
 nmap <leader>wq :wq<CR>
 
 " Reload VI3
-nmap <leader>so :so%<CR> 
+nmap <leader>so :so%<CR>
 
 " ##### MOVE PANELS #####
 " Move left panel
