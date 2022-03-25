@@ -9,15 +9,17 @@ set mouse=a " Allow use the mouse (select text, move cursor)
 set nowrap " No split the line if it is too long
 
 set cursorline " Mark the current line
-"set cursor column " Mark the current column
+set cursorcolumn " Mark the current column
 set colorcolumn=80 " Show the limit column to 80 characters
 
-" Indentation to 2 spaces
 set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set shiftround
-set expandtab " Insert spaces and not <Tab>s
+
+" Indentation to 2 spaces
+
+ set shiftwidth=2
+ set softtabstop=2
+ set shiftround
+ set expandtab " Insert spaces and not <Tab>s
 
 set hidden " Allow change of buffer without save it
 
@@ -40,7 +42,7 @@ set encoding=UTF-8 " Set encoding
 
 syntax enable " Enable the syntax for the languages
 
-" ##### PLUGINS #####
+" ##### PLUGINS ##### ========================================================
 
 call plug#begin('~/vimfiles/autoload')
 
@@ -57,14 +59,15 @@ Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Search files and much more
-Plug 'junegunn/fzf', { 'do': {-> fzf#install() } }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Git commands
 Plug 'tpope/vim-fugitive'
 
 " Status line
 Plug 'vim-airline/vim-airline'
-
+				
 " Themes for status line
 Plug 'vim-airline/vim-airline-themes'
 
@@ -92,12 +95,15 @@ Plug 'yggdroot/indentline'
 " Icons
 Plug 'ryanoasis/vim-devicons'
 
-" CSV
+" CSV Features
 Plug 'chrisbra/csv.vim'
+
+" Emmet
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
-" ##### COLOR SCHEME #####
+" ##### COLOR SCHEME ##### ===================================================
 
 if (has("termguicolors"))
   set termguicolors
@@ -105,21 +111,36 @@ endif
 
 colorscheme shades_of_purple " Set default color scheme
 
-" ##### STATUS LINE ######
+" ##### STATUS LINE ###### ===================================================
 
 let g:shades_of_purple_airline = 1
 let g:airline_theme='shades_of_purple' " Set theme status line
 
-" ##### INDENT LINES #####
+" ##### INDENT LINES ##### ===================================================
 
-let g:indentLine_char_list = ['|', '¦', '┆', '┊'] " Characters to show the indent lines
-let g:indentLine_color_gui = '#754dc0'
-          
+" Characters to show the indent lines
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_color_gui = '#754dc0' " Color indent line
+
 let g:indentLine_enabled = 1 " Set enabled indent line
 
-" ##### KEYBIN'S #####
+" ##### FZF ##### ============================================================
 
-" ##### FILES #####
+let g:fzf_preview_window = ['right:70%', 'ctrl-/']
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" ##### KEYBIN'S ##### =======================================================
+
+" ##### VIM ##### ============================================================
+
+" Exit mode insert
+imap jk <ESC>
+
+" ##### FILES ##### ==========================================================
+
 " Set leader key
 let mapleader=" " 
 " Save a file
@@ -129,10 +150,15 @@ nmap <leader>q :q<CR>
 " Save and exit from a file
 nmap <leader>wq :wq<CR>
 
-" Reload VI3
+" Reload VIM
 nmap <leader>so :so%<CR>
 
-" ##### MOVE PANELS #####
+" Delete all buffers
+nmap <leader>bd :%bdelete<CR>
+
+
+" ##### MOVE PANELS ##### ====================================================
+
 " Move left panel
 nmap <C-h> <C-w>h
 " Move bottom panel
@@ -142,18 +168,23 @@ nmap <C-k> <C-w>k
 " Move right panel
 nmap <C-l> <C-w>l
 
-" Exit mode insert
-imap jk <ESC>
 
-" ##### CLIPBOARD O.S. #####
-" Copy
-nmap <leader>y "+y
+" ##### CLIPBOARD O.S. ##### =================================================
+
+" Copy all line
+nmap <leader>y "+y<CR>
+" Copy selected text
+vmap <leader>y "+y
 " Paste
-nmap <leader>p "+p
-" Cut
-nmap <leader>d "+d
+nmap <leader>p "+p<CR>
+" Cut all line
+nmap <leader>d "+d<CR>
+" Cut selected text
+vmap <leader>d "+d
 
-" ##### TABS #####
+
+" ##### TABS ##### ===========================================================
+
 "Create a new tab
 nmap <Leader>tn :tabnew<CR>
 " Move to the next tab
@@ -161,51 +192,54 @@ nmap <Tab> :tabn<CR>
 " Move to the previous tab
 nmap <S-Tab> :tabp<CR>
 
-" ##### FLOAT TERMINAL ######
+
+" ##### FLOAT TERMINAL ###### ================================================
+
 " Create a new float terminal
 nmap <leader>t :FloatermNew<CR>
 " Toggle the float terminal
 nmap <leader>tt :FloatermToggle<CR>
 
-" ##### FZF #####
+
+" ##### FZF ##### ============================================================
+
 " Open FZF (Search files)
-nmap <C-p> :FZF<CR>
+nmap <C-p> :GFiles<CR>
+" Git status
+nmap <leader>gst :GFiles?<CR>
+" Git log
+nmap <Leader>gl :Commits<CR>
+
+
+" ##### NERDTREE ##### =======================================================
 
 " Toggle Files Tree
 nmap <leader>n :NERDTreeToggle<CR>
 
-" ##### STARTIFY #####
+
+" ##### STARTIFY ##### =======================================================
+
 " Show home page Startify
 nmap <leader><leader> :Startify<CR>
 
-" ##### GIT ##### 
-" Show branches
+
+" ##### GIT ##### ============================================================
+
 nmap <leader>gb :Git branch<CR>
-" Restore not staged files
 nmap <leader>gr :Git restore 
-" Restore staged files
 nmap <leader>grs :Git restore --staged 
-" Change branch
 nmap <leader>gsw :Git switch 
-" Create and change branch
 nmap <leader>gsc :Git switch -c 
-" View status files
-nmap <leader>gst :Git status<CR>
-" View differencies files
 nmap <leader>gd :Git diff<CR>
-" Add files to stage
 nmap <leader>ga :Git add 
-" Add all files to stage
 nmap <leader>gaa :Git add .<CR>
-" Make commit
 nmap <leader>gc :Git commit<CR>
-" View logs
-nmap <leader>gl :Git log<CR>
-" Get remote changes
 nmap <leader>gf :Git fetch<CR>
-" Merge branchs
 nmap <leader>gm :Git merge 
-" Get remote changes and merge
 nmap <leader>gpl :Git pull<CR>
-" Upload local changes to repository
 nmap <leader>gph :Git push<CR>
+
+
+" ##### EMMET ##### ==========================================================
+
+imap <leader><Tab> <C-y>,
