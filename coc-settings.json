@@ -5,5 +5,23 @@
       "args" : ["up", "--method", "stdio"],
       "filetypes": ["sql", "mysql"]
     }
-  }
+  },
+
+  // Require .prettierrc
+  "prettier.requireConfig": true,
+
+  // Tslint on save
+  "tslint.enable": true,
+  "tslint.autoFixOnSave": true,
+
+  //Run Prettier (and others),
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "Markdown",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ]
 }
