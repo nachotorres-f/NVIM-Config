@@ -37,27 +37,3 @@ Execute in neovim:
 ```vim:
 :PlugInstall
 ```
-
-2 - Install Coc Extensions
-
-```vim:
-:CocInstall <extensions> 
-```
-
-### **Extensions:**
-
-* coc-git
-* coc-prettier
-* coc-eslint
-* coc-html
-* coc-css
-* coc-tsserver
-* coc-json
-* coc-markdownlint
-* coc-phpls
-* coc-sh
-* coc-pyright
-* coc-vetur
-* coc-pairs
-
-**For more extensions** [click here](https://github.com/neoclide/coc.nvim/wiki/Language-servers)
