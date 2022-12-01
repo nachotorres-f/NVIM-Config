@@ -8,7 +8,6 @@ keymap('i', 'jk', '<ESC>') -- Exit mode INSERT
 -- FILES
 keymap('n', '<Leader>w', ':w<CR>') -- Save a file
 keymap('n', '<Leader>q', ':q<CR>') -- Quit a file
-keymap('n', '<Leader>wq', ':wq<CR>') -- Save and exit a file
 keymap('n', '<Leader>bd', ':%bdelete<CR>') -- Delete all buffers 
 keymap('n', '<Leader>so', ':so%<CR>') -- Reload neovim config
 
@@ -29,7 +28,7 @@ keymap('n', '<Tab>', ':tabn<CR>') -- Move next tab
 keymap('n', '<S-Tab>', ':tabp<CR>') -- Move prev tab
 
 -- FLOAT TERMINAL
-keymap('n', '<Leader>t', ':FloatermNew<CR>') -- Open terminal
+keymap('n', '<Leader>tt', ':FloatermNew<CR>') -- Open terminal
 
 -- FZF
 keymap('n', '<Leader>gst', ':GFiles?<CR>') -- Show the git status of the files
