@@ -65,11 +65,7 @@ Plug 'neoclide/jsonc.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 -- Icons
-vim.cmd([[
-  if has('unix')
-    Plug 'ryanoasis/vim-devicons'
-  endif
-]])
+Plug 'ryanoasis/vim-devicons'
 
 -- CSV Features
 Plug 'chrisbra/csv.vim'

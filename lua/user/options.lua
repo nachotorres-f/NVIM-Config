@@ -39,6 +39,7 @@ local options = {
 vim.cmd 'syntax enable' -- Enable syntax
 vim.cmd 'set nowrap' -- No split the line if it is too long
 vim.cmd 'colorscheme dracula' -- Set theme color of nvim
+vim.cmd 'set fileformats=unix,dos' -- Set lf end line
 
 for k, v in pairs(options) do
   vim.opt [k] = v
